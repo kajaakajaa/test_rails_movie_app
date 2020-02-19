@@ -6,11 +6,16 @@ class UploaderController < ApplicationController
   end
 
   def upload
-    @upload_file = UploadFile.new( params.require(:upload_file).permit(:name, :file) )
+    @upload_file = UploadFile.new(upload_file_params)
     @upload_file.save
     redirect_to action: 'index'
   end
 
   def download
   end
+
+  private
+    def upload_file_params
+      params.require(:upload_file).permit(:name, :file)
+    end
 end
