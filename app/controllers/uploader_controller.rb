@@ -3,12 +3,17 @@ class UploaderController < ApplicationController
   end
 
   def form
+    @upload_file = UploadFile.new
   end
 
   def upload
     @upload_file = UploadFile.new(upload_file_params)
-    @upload_file.save
-    redirect_to action: 'index'
+      if @upload_file.save
+         redirect_to action: 'index'
+      else
+        #  render plain: @upload_file.errors.inspect
+         render action: "form"
+      end
   end
 
   def download
