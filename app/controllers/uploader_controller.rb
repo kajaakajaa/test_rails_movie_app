@@ -12,7 +12,7 @@ class UploaderController < ApplicationController
          redirect_to action: 'index'
       else
         #  render plain: @upload_file.errors.inspect
-         render action: "form"
+         render "form"
       end
   end
 
