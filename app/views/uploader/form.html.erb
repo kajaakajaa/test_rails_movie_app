@@ -1,17 +1,17 @@
 <%= form_with model: @upload_file, url: uploader_upload_path,
-id: "new_upload", class: "new_upload", local: true do |f| %>
+  id: "new_upload", class: "new_upload", local: true do |f| %>
   
   <%= f.label :name, "name" %>
   <%= f.text_field :name %>
   <% if @upload_file.errors.messages[:name].any? %>
-  <span class= "error"><% @upload_file.errors.messages[:name][0] %></span>
+  <span class= "error"><%= @upload_file.errors.messages[:name][0] %></span>
   <% end %>
 
   <%= f.label :file %>
   <%= f.file_field :file %>
   <% if @upload_file.errors.messages[:file].any? %>
-  <span class= "error"><% @upload_file.errors.messages[:file][0] %></span>
-  <% end %>   
+  <span class= "error"><%= @upload_file.errors.messages[:file][0] %></span>
+  <% end %>
   
   <%= f.submit "Upload" %>
 <% end %>   
