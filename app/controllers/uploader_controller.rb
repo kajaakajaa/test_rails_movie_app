@@ -2,6 +2,11 @@ class UploaderController < ApplicationController
   def index
   end
 
+  def show
+    # @user = User.find(current_user.id)
+    @upload_file = UploadFile.find(params[:id])
+  end
+
   def form
     @upload_file = UploadFile.new
   end

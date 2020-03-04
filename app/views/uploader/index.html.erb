@@ -2,6 +2,6 @@
 <%= link_to "アップロードはこちら", action: "form" %>
   <ul>
     <% UploadFile.all.reverse_order.each do |upload| %>
-      <li><%= link_to upload.name, action: "download", id: upload.id %></li>
+      <li><%= link_to upload.name, action: "show", id: upload.id %></li>
     <% end %>
   </ul>
