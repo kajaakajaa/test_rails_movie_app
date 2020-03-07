@@ -3,7 +3,6 @@ class UploaderController < ApplicationController
   end
 
   def show
-    # @user = User.find(current_user.id)
     @upload_file = UploadFile.find(params[:id])
   end
 
@@ -16,7 +15,6 @@ class UploaderController < ApplicationController
       if @upload_file.save
          redirect_to action: 'index'
       else
-        #  render plain: @upload_file.errors.inspect
          render "form"
       end
   end
