@@ -7,10 +7,10 @@
   <span class= "error"><%= @upload_file.errors.messages[:name][0] %></span>
   <% end %>
 
-  <%= f.label :file %>
-  <%= f.file_field :file %>
-  <% if @upload_file.errors.messages[:file].any? %>
-  <span class= "error"><%= @upload_file.errors.messages[:file][0] %></span>
+  <%= f.label :data %>
+  <%= f.file_field :data %>
+  <% if @upload_file.errors.messages[:data].any? %>
+  <span class= "error"><%= @upload_file.errors.messages[:data][0] %></span>
   <% end %>
   
   <%= f.submit "Upload" %>

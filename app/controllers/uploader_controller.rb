@@ -4,6 +4,7 @@ class UploaderController < ApplicationController
 
   def show
     @upload_file = UploadFile.find(params[:id])
+    send_data(@uploader_file.data)
   end
 
   def form
@@ -24,6 +25,6 @@ class UploaderController < ApplicationController
 
   private
     def upload_file_params
-      params.require(:upload_file).permit(:name, :file)
+      params.require(:upload_file).permit(:name, :data)
     end
 end
