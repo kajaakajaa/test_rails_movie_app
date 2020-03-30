@@ -21,21 +21,9 @@ class UploaderController < ApplicationController
 
   def download
   end
-
-  def create
-    respond_to do |format|
-      if @article.update(article_params) && @article.video.recreate_versions!
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
+  
   private
     def upload_file_params
-      params.require(:upload_file).permit(:name)
+      params.require(:upload_file).permit(:name, :file)
     end
 end

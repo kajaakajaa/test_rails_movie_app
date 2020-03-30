@@ -15,11 +15,4 @@
   
   <%= f.submit "Upload" %>
 <% end %>
-<p>
-  <strong>Video:</strong>
-</p>
-<p>
-  <%= link_to @upload_file.file_url.to_s do %>
-      <%= image_tag(@upload_file.file_url(:screenshot).to_s, id: "file", :alt => "screenshot") %>
-  <% end %>
-</p>
+
