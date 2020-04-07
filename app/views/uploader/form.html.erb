@@ -8,7 +8,7 @@
   <% end %>
 
   <%= f.label :file %>
-  <%= f.file_field :file, :accept => "video/*" %>
+  <%= f.file_field :file, :accept => "video/*", multiple: true %>
   <% if @upload_file.errors.messages[:file].any? %>
   <span class= "error"><%= @upload_file.errors.messages[:file][0] %></span>
   <% end %>
