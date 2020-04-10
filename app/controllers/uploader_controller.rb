@@ -13,7 +13,7 @@ class UploaderController < ApplicationController
   def upload
     @upload_file = UploadFile.new(upload_file_params)
       if @upload_file.save
-         redirect_to action: 'index'
+         redirect_to action: :index
       else
          render "form"
       end
@@ -24,6 +24,6 @@ class UploaderController < ApplicationController
   
   private
     def upload_file_params
-      params.require(:upload_file).permit(:name, {file: []})
+      params.require(:upload_file).permit(:name, :video_file, :thumbnail)
     end
 end
