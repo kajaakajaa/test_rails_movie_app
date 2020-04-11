@@ -1,5 +1,7 @@
 <h2><%= @upload_file.name %></h2>
-<%#= image_tag(@upload_file.file_url, :id => "data-image") if @upload_file.file.present? %>
+
+<%#= image_tag(@upload_file.thumbnail_url, :id => "data-image") if @upload_file.thumbnail.present? %>
+
 <%= video_tag(@upload_file.video_file_url, :controls => true, :controlslist => "nodownload", :preload => true,
- :loop => true, :poster => "thumbnail_url", :id => "data") if @upload_file.file.present? %>
-<%#= video_tag 'test.webm', autoplay: true, muted: true, controls: true, preload: true %>
+ :loop => true, :poster => @upload_file.thumbnail_url, :id => "data") if @upload_file.video_file.present? %>
+
