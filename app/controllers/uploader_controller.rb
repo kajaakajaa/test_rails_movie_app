@@ -6,11 +6,11 @@ class UploaderController < ApplicationController
     @upload_file = UploadFile.find(params[:id])
   end
 
-  def form
+  def form #(new)
     @upload_file = UploadFile.new
   end
 
-  def upload
+  def upload #(creat)
     @upload_file = UploadFile.new(upload_file_params)
       if @upload_file.save
          redirect_to action: :index
